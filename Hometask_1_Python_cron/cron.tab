@@ -1,0 +1,6 @@
+* * * * *   echo Hello!  
+*/2 * * * *   echo Hello1! 
+*/3 * * * *   echo Hello2!
+*/4 * * * *   echo Hello3!
+0 22 * * *   echo Hello4!
+
