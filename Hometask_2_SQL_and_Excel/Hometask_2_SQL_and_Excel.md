@@ -134,3 +134,37 @@ INSERT INTO `test`.`new_table` (`id_pk`,`ID`, `ProviderID`, `Direction`, `Instru
 
   
 ![](./data/photo16.png)
+
+
+____
+
+*Часовой пояс системы сервера. Когда сервер запускается, он пытается определить часовой пояс хост-компьютера и использует его для установки системной переменной system_time_zone*
+
+*Форматы даты/времени MySQL не поддерживают часовые пояса. Вам нужно будет «нормализовать» время для одного определенного часового пояса (обычно UTC или часового пояса, в котором находится сервер), или сохранить часовой пояс в другом поле и вычислить смещения самостоятельно.*
+
+*MySQL будет хранить timestamp UTC. Он преобразует вашу временную метку в UTC перед сохранением и преобразует обратно, когда вы ее извлечете. Он будет использовать часовой пояс, установленный time_zoneпеременной. Это всегда UTC. Таким образом, отклонение зоны вычитается при сохранении и добавляется при выборе. Мы сможем это увидеть когда изменим в конфиге или вручную `@@global.time_zone`*
+
+
+```sql
+CREATE TABLE `test`.`new_table3` (
+  `id_pk` INT NOT NULL,
+  `ID` VARCHAR(10) NOT NULL,
+  `ProviderID` ENUM('FCXM', 'SQM') NOT NULL,
+  `Direction` ENUM('sell', 'buy') NOT NULL,
+  `Instrument` VARCHAR(6) NOT NULL,
+  `CreationDate` DATETIME(3) NOT NULL,
+  `ChangeDate` DATETIME(3) NOT NULL,
+  `Offset` TIME NOT NULL,
+  `Status` ENUM('new', 'in progress', 'reject', 'part fill', 'done', 'fill') NOT NULL,
+  `InitialPrice` DOUBLE NOT NULL,
+  `FillPrice` DOUBLE NOT NULL,
+  `InitialVolume` DOUBLE NOT NULL,
+  `FillVolume` DOUBLE NOT NULL,
+  `Tags` VARCHAR(45) NOT NULL,
+  `Description` VARCHAR(55) NOT NULL,
+  `ExtraData` VARCHAR(100) NOT NULL,
+  PRIMARY KEY (`id_pk`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_unicode_ci;
+```
