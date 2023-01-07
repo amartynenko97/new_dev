@@ -151,7 +151,6 @@ def drop_and_create_table (connection):
 
 
 
-
 def main():
     
     
@@ -172,4 +171,21 @@ def main():
 
 if __name__ == '__main__':
     main()
+```
+
+
+
+
+```sh
+root@debian ~/sql_task $ python3 /root/sql_task/sql_task.py
+2023-01-07 18:45:21 - root - INFO - sql_task - Logger Completed!
+Connecting to MySQL database...
+2023-01-07 18:45:21 - mysql.connector.authentication - INFO - authentication - package: mysql.connector.plugins
+2023-01-07 18:45:21 - mysql.connector.authentication - INFO - authentication - plugin_name: caching_sha2_password
+2023-01-07 18:45:21 - mysql.connector.authentication - INFO - authentication - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-01-07 18:45:21 - root - INFO - sql_task - Connected to MySQL Server version 8.0.31
+2023-01-07 18:45:21 - root - INFO - sql_task - You're connected to database: new_schema
+Creating table....
+Table has been cleared.
+MySQL connection is closed
 ```
