@@ -173,8 +173,9 @@ if __name__ == '__main__':
     main()
 ```
 
+___
 
-
+### *Output*
 
 ```sh
 root@debian ~/sql_task $ python3 /root/sql_task/sql_task.py
@@ -188,4 +189,15 @@ Connecting to MySQL database...
 Creating table....
 Table has been cleared.
 MySQL connection is closed
+```
+___
+
+### *logger.log*
+
+```sh
+[mysql]
+host = localhost
+database = new_schema
+user = root
+password = anton129
 ```
