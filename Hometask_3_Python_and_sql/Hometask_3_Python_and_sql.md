@@ -199,5 +199,5 @@ ___
 host = localhost
 database = new_schema
 user = root
-password = anton129
+password = пароль
 ```
