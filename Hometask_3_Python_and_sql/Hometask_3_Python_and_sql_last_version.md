@@ -411,7 +411,7 @@ ____
 host = localhost
 database = test
 user = root
-password = anton129
+password = пароль
 ```
 ____
 
@@ -435,3 +435,14 @@ ____
 ### *Output in mysql*
 
 ![](./photo1.png)
+
+
+____
+
+### *Links*
+
+1. https://www.sqlitetutorial.net/sqlite-python/creating-tables/
+2. https://overiq.com/mysql-connector-python-101/creating-tables-using-connector-python/
+3. https://www3.ntu.edu.sg/home/ehchua/programming/webprogramming/Python2_Apps.html
+4. https://pynative.com/python-mysql-database-connection/
+5. https://realpython.com/python-mysql/
