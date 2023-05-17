@@ -36,7 +36,7 @@ class Main():
                                                         wait=self.context['wait'], 
                                                         logger=self.context['logger'],
                                                         collection_facebook=self.details_collection,
-                                                        total_profiles=self.context['config']['parser']['amount_of_friends'])
+                                                        total_profiles=int(self.context['config']['parser']['amount_of_friends']))
         df = pandas.DataFrame(self.details_collection)
         self.context['logger'].info(f"The necessary information was collected from {len(df)} profiles")
         print(df)
